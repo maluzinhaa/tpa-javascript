@@ -1,0 +1,108 @@
+1. Criando uma função para ordenar um array de objetos com base em uma propriedade:
+
+function sortByProperty(array, property) {
+  return array.sort((a, b) => a[property] - b[property]);
+}
+
+const data = [
+  { id: 1, name: "Alice", age: 25 },
+  { id: 2, name: "Bob", age: 30 },
+  { id: 3, name: "Charlie", age: 20 },
+];
+
+const sortedData = sortByProperty(data, "age");
+console.log(sortedData); // [{ id: 3, name: "Charlie", age: 20 }, { id: 1, name: "Alice", age: 25 }, { id: 2, name: "Bob", age: 30 }]
+
+2. Verificando se o número é primo:
+
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+console.log(isPrime(5)); // true
+console.log(isPrime(9)); // false
+
+3. Encontrando o maior número em um array:
+
+function findMax(array) {
+  let max = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] > max) {
+      max = array[i];
+    }
+  }
+  return max;
+}
+
+console.log(findMax([2, 7, 1, 9, 4])); // 9
+
+4. Criando uma função para calcular a média de um array de números:
+
+function calculateAverage(array) {
+  const sum = array.reduce((acc, num) => acc + num, 0);
+  return sum / array.length;
+}
+
+console.log(calculateAverage([2, 4, 6])); // 4
+
+5. Decimal para binário:
+
+function decimalToBinary(num) {
+  return parseInt(num, 10).toString(2);
+}
+
+console.log(decimalToBinary(10)); // "1010"
+
+6. Anagrama:
+
+function isAnagram(str1, str2) {
+  const sorted1 = str1.split("").sort().join("");
+  const sorted2 = str2.split("").sort().join("");
+  return sorted1 === sorted2;
+}
+
+console.log(isAnagram("listen", "silent")); // true
+console.log(isAnagram("hello", "world")); // false
+
+7. Achar o index de um Array:
+
+function findIndex(array, element) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === element) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+console.log(findIndex(["apple", "banana", "cherry"], "banana")); // 1
+
+8. Invertendo uma string:
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+console.log(reverseString("hello")); // "olleh"
+
+9. verificando se há somente caracteres únicos:
+
+function hasUniqueChars(str) {
+  const set = new Set(str);
+  return set.size === str.length;
+}
+
+console.log(hasUniqueChars("abcdefg")); // true
+console.log(hasUniqueChars("hello")); // false
+
+10. Verificando se o número é par ou impar
+
+function isOddOrEven(x){
+   return x%2===0 ? "even" : "odd";
+}
+
+console.log(isOddOrEven(2)); // "even"
